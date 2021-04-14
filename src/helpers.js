@@ -8,7 +8,7 @@ function getAwsClient(action, settings){
         secretAccessKey: secret
     }
     if (action.params.REGION){
-        config.region = action.params.REGION.id
+        config.region = action.params.REGION.id ? action.params.REGION.id : action.params.REGION;
     }
     return new aws.S3(config);
 }
